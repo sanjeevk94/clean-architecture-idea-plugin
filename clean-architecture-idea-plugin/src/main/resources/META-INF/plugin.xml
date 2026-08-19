@@ -1,0 +1,54 @@
+<!-- Plugin metadata (id/name/version/description/ideaVersion) is managed by the
+     IntelliJ Platform Gradle Plugin v2 via intellijPlatform.pluginConfiguration DSL.
+     This file declares only extensions, actions, and dependencies. -->
+<idea-plugin>
+
+    <depends>com.intellij.modules.platform</depends>
+    <!-- No dependency on the Gradle plugin — files are generated directly via Java IO.
+         This makes the plugin work in any IntelliJ-based IDE, including those that
+         don't bundle the Gradle plugin (e.g. CLion, Rider). -->
+
+    <!-- ── Actions ──────────────────────────────────────────────────────── -->
+    <actions>
+        <!--
+            "Generate Clean Arch Feature…" appears in three places:
+              1. Code > Generate menu (Alt+Insert)
+              2. Project-view right-click context menu
+              3. Editor right-click context menu
+        -->
+        <action id="CleanArch.GenerateFeature"
+                class="com.korina.cleanarch.idea.actions.GenerateFeatureAction"
+                text="Generate Clean Arch Feature…"
+                description="Open the Clean Architecture boilerplate generator dialog">
+            <!-- Alt+Insert → Generate menu -->
+            <add-to-group group-id="GenerateGroup"        anchor="last"/>
+            <!-- Project view right-click -->
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <!-- Editor right-click -->
+            <add-to-group group-id="EditorPopupMenu"      anchor="last"/>
+            <!-- Tools top-level menu -->
+            <add-to-group group-id="ToolsMenu"            anchor="last"/>
+        </action>
+    </actions>
+
+
+
+    <!-- ── Extensions ───────────────────────────────────────────────────── -->
+    <extensions defaultExtensionNs="com.intellij">
+
+        <!-- Bottom tool window that shows live generation output from DirectFileGenerator -->
+        <toolWindow id="CleanArch"
+                    displayName="Clean Architecture Generator"
+                    anchor="bottom"
+                    secondary="false"
+                    factoryClass="com.korina.cleanarch.idea.toolwindow.CleanArchToolWindowFactory"
+                    icon="/icons/cleanarch.svg"/>
+
+        <!-- Balloon notification group used by CleanArchNotifier -->
+        <notificationGroup id="CleanArch.Notifications"
+                           displayType="BALLOON"/>
+
+    </extensions>
+
+</idea-plugin>
+
