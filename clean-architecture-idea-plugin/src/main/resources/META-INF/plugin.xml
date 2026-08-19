@@ -3,6 +3,8 @@
      This file declares only extensions, actions, and dependencies. -->
 <idea-plugin>
 
+    <vendor email="kvssn94@gmail.com" url="https://github.com/sanjeevk94">Sai Sanjeev Kolasani</vendor>
+
     <depends>com.intellij.modules.platform</depends>
     <!-- No dependency on the Gradle plugin — files are generated directly via Java IO.
          This makes the plugin work in any IntelliJ-based IDE, including those that
