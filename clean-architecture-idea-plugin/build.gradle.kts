@@ -64,7 +64,7 @@ intellijPlatform {
 
     pluginConfiguration {
         id          = "com.korina.cleanarchitecture.idea"
-        name        = "Clean Architecture Generator"
+        name        = "Clean Architecture Scaffold Generator"
         version     = "1.0.0"
         description = """
             Generates Clean Architecture boilerplate for Android multi-module projects.
