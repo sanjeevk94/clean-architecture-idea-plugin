@@ -39,10 +39,9 @@ java {
 // ---------------------------------------------------------------------------
 dependencies {
     intellijPlatform {
-        // Use the locally installed IntelliJ IDEA 2026.1.3 (build 261) to avoid
-        // network downloads. Swap to intellijIdeaCommunity("2024.3.2") (or later)
-        // when building in CI with network access.
-        local("/Applications/IntelliJ IDEA.app/Contents")
+        // Download IntelliJ IDEA Community for building — no local IDE required.
+        // This is the version used to compile against; the plugin runs on 2023.2+ (sinceBuild=232).
+        intellijIdeaCommunity("2024.3.2")
 
         // Plugin verifier checks compatibility against target IDE versions.
         pluginVerifier()
