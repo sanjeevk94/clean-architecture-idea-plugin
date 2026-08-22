@@ -79,6 +79,13 @@ intellijPlatform {
         }
     }
 
+    pluginVerification {
+        ides {
+            ide("IU", "2024.3.2")
+            ide("IC", "2024.3.2")
+        }
+    }
+
     // ── Signing (required for Marketplace — configure before publishing) ─────
     // Generate a key pair: https://plugins.jetbrains.com/docs/intellij/plugin-signing.html
     // Place chain.crt and private.pem in this directory, then set PRIVATE_KEY_PASSWORD.
