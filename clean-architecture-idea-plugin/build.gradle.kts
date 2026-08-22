@@ -7,7 +7,7 @@ plugins {
 }
 
 group   = "com.korina.cleanarch"
-version = "1.0.0"
+version = "1.0.1"
 
 // ---------------------------------------------------------------------------
 // Repositories — intellijPlatform must be added alongside mavenCentral
@@ -65,7 +65,7 @@ intellijPlatform {
     pluginConfiguration {
         id          = "com.korina.cleanarchitecture.idea"
         name        = "Clean Architecture Scaffold Generator"
-        version     = "1.0.0"
+        version     = "1.0.1"
         description = """
             Generates Clean Architecture boilerplate for Android multi-module projects.
             Provides a GUI dialog to define a feature schema (name, fields, DI, storage, API)
